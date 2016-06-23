@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Acceptance Testing</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide a {
+            background: none;
+        }
+    </style>
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Dynamic Acceptance Testing</h1>
+    <p><a href="https://twitter.com/andytait">Andy Tait</a></p>
+</header>
+<section class="slide">
+    <h2>Dynamic Acceptance Testing</h2>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h3>Andy Tait <a href="https://twitter.com/andytait">@andytait</a></h3>
+    <p>Head of Development at <a href="https://www.opia-sp.com">Opia</a></p>
+</section>
+<section class="slide">
+    <h2>Testing Experience</h2>
+    <ul>
+        <li>Not an expert</li>
+        <li>Just do what is required to prove functionality</li>
+        <li>Provides safety net to prevent mistakes going live</li>
+        <li>Don’t get bogged down with jargon</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Why test?</h2>
+    <ul>
+        <li>Prove functionality</li>
+        <li>Much faster than testing manually</li>
+        <li>Makes refactoring easier</li>
+        <li>Acts as documentation</li>
+        <li>Makes your code better</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>What are acceptance tests?</h2>
+    <ul>
+        <li>Automated browser based tests</li>
+        <li>Acts as a user of application performing actions</li>
+        <li>e.g. filling out registration form / making an order</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Behat</h2>
+    <ul>
+        <li>Behaviour Driven Development</li>
+        <li>Orientated around communication with stakeholders</li>
+        <li>Build up scenarios and develop against that</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>What options do we have?</h2>
+    <ul>
+        <li>Behat with Gherkin (for user stories)</li>
+        <li>Behat with PHPUnit (what we are using)</li>
+        <li>Codeception</li>
+        <li>Laravel Integrated Package</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Mink & Goutte</h2>
+    <ul>
+        <li>Mink is a browser emulator</li>
+        <li>Goutte is a web scraper</li>
+    </ul>
+<pre>
+<code>
+{
+    "behat/mink": "^1.6",
+    "behat/mink-goutte-driver": "^1.1"
+}
+</code>
+</pre>
+</section>
+<section class="slide">
+    <h2>Scenario</h2>
+    <ul>
+        <li>Testing a multi-step registration form</li>
+        <li>Slow and fiddly to do manually</li>
+        <li>Has multiple languages</li>
+        <li>Has differing functionality</li>
+        <li>Specific scenario but hopefully useful demonstration</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Data Providers</h2>
+    <ul>
+        <li>Add to docblock</li>
+        <li>Array of arrays</li>
+        <li>Passed as parameters</li>
+        <li>Useful for quickly passing scenarios to a test</li>
+    </ul>
+</section>
+<section class="slide">
+    <h2>Data Provider Example (1)</h2>
+<pre>
+<code>
+/**
+* @dataProvider getEuropeanCountryLocales
+*/
+</code>
+</pre>
+</section>
+<section class="slide">
+    <h2>Data Provider Example (2)</h2>
+<pre>
+<code>
+public function getEuropeanCountryLocales()
+{
+    return [
+        ['es'],
+        ['fr'],
+    ];
+}
+</code>
+</pre>
+</section>
+<section class="slide">
+    <h2>Demo</h2>
+</section>
+<section class="slide">
+    <h2>Any questions?</h2>
+</section>
+
+<div class="progress"></div>
+<script src="node_modules/shower-core/shower.min.js"></script>
+
+</body>
+</html>
